@@ -4,7 +4,7 @@ import logging
 import jsonpickle
 import tqdm
 from scholarly import scholarly
-from util import clean_filename
+from scholar_map.util import clean_filename
 
 __author__ = 'Pedro Sequeira'
 __email__ = 'pedrodbs@gmail.com'
@@ -42,7 +42,7 @@ if __name__ == '__main__':
         logging.info(f'Loaded info for author id: "{args.id}" from {author_file}')
     else:
         logging.info(f'Getting info for author id: "{args.id}"...')
-        search_query = scholarly.search_args.id(args.id)
+        search_query = scholarly.search_author_id(args.id)
         author = scholarly.fill(search_query)
         with open(author_file, 'w') as fp:
             fp.write(jsonpickle.dumps(author, indent=4))
@@ -84,7 +84,7 @@ if __name__ == '__main__':
         # for each citation, get authors' list
         logging.info(f'Processing {len(citations)} citations...')
         for citation in citations:
-            authors_ids = citation['args.id']
+            authors_ids = citation['author_id']
             author_names = citation['bib']['author']
 
             # check own citation, skip
@@ -107,7 +107,7 @@ if __name__ == '__main__':
                         logging.info(f'Author "{name}" does not have a Google Scholar profile')
                     else:
                         logging.info(f'Getting info for citing author "{name}"...')
-                        search_query = scholarly.search_args.id(args.id)
+                        search_query = scholarly.search_author_id(args.id)
                         authors[args.id] = search_query
 
                     # update authors file

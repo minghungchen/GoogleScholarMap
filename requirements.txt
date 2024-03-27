@@ -1,0 +1,11 @@
+email2country==0.1.0
+geopy==2.4.1
+geotext==0.4.0
+IP2Location==8.10.2
+IP2Location==8.10.2
+jsonpickle==3.0.3
+pandas==2.2.1
+Requests==2.31.0
+scholarly==1.7.11
+setuptools==58.0.4
+tqdm==4.66.2

@@ -13,8 +13,8 @@ from ipaddress import ip_network, ip_address
 from geopy import Nominatim
 from geotext import GeoText
 from requests.exceptions import SSLError
-from get_scholar import AUTHORS_FILE, OUTPUT_DIR
-from util import get_title
+from scholar_map.get_scholar import AUTHORS_FILE, OUTPUT_DIR
+from scholar_map.util import get_title
 
 __author__ = 'Pedro Sequeira'
 __email__ = 'pedrodbs@gmail.com'

@@ -4,9 +4,9 @@ import os
 import jsonpickle
 import pandas as pd
 import tqdm
-from get_locations import LOCATIONS_FILE
-from get_scholar import OUTPUT_DIR, AUTHOR_FILE, AUTHORS_FILE
-from util import clean_filename, get_title
+from scholar_map.get_locations import LOCATIONS_FILE
+from scholar_map.get_scholar import OUTPUT_DIR, AUTHOR_FILE, AUTHORS_FILE
+from scholar_map.util import clean_filename, get_title
 
 __author__ = 'Pedro Sequeira'
 __email__ = 'pedrodbs@gmail.com'
@@ -101,7 +101,7 @@ if __name__ == '__main__':
         # for each citation, get authors' list
         logging.info(f'Processing {len(citations)} citations...')
         for citation in citations:
-            authors_ids = citation['args.id']
+            authors_ids = citation['author_id']
             author_names = citation['bib']['author']
 
             # check own citation, skip
